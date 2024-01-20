@@ -36,7 +36,6 @@ function fetchFile(url){
         
     }).catch(()=>{
         alert('Failed to download');
-         downloadBtn.innerText = "Download file";
     })
 }
 
