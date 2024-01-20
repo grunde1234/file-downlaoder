@@ -1,0 +1,133 @@
+
+/* || RESET */
+*
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+span{
+    white-space: nowrap;
+}
+
+input,textarea,button{
+    font: inherit;
+}
+
+/* || VARIABLE */
+:root{
+
+    /* || FONT  */
+--FONT-FAMILY: monospace;
+
+    /* || COLOR */
+--BG-COLOR: #4286f4bb;
+--FORM-COLOR: #FFF;
+--FONT-COLOR: #000;
+}
+
+
+/* || ENTITIES */
+body{
+    min-height: 100vh;
+    background-color: var(--BG-COLOR);
+    font-family: var(--FONT-FAMILY);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 50px;
+}
+
+header h1{
+    font-size: 27px;
+    font-weight: 500;
+}
+
+header p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* || UTILITIES */
+.form{
+    width: 500px;
+    background-color: var(--FORM-COLOR);
+    border-radius: 5px;
+    padding: 20px 25px 15px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.9rem;
+    border: 1px solid #000;
+}
+
+.form button{
+    background-color: var(--BG-COLOR);
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    padding: 5px;
+    opacity: 0.5;
+   pointer-events: none;
+   color: var(--FORM-COLOR);
+}
+.form input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.load{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 800px;
+    display: grid;
+    place-content: center;
+    margin: auto 0;
+    background-color: #fff;
+    transition: opacity 0.7s, visibility 0.7s;
+  }
+  
+  .load-hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .load::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: var(--BG-COLOR);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+  }
+  
+  @keyframes loading{
+    from{
+      transform: rotate(0turn)
+    }
+    to{
+      transform: rotate(1turn);
+    }
+  }
+  
+
