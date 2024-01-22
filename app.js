@@ -32,11 +32,10 @@ function fetchFile(url){
          tag.click();
          tag.remove();
          URL.revokeObjectURL(fetchURL);
-            downloadBtn.innerText = "Download file;
         
     }).catch(()=>{
         alert('Failed to download');
-        downloadBtn.innerText = "Download file;
+      
     })
 }
 
